@@ -23,3 +23,11 @@ get_subdomain_info() {
 # If two arguments are passed, get the information for the specified subdomain
 if [[ $# -eq 2 ]]; then
   get_subdomain_info $2 $1
+
+  # Otherwise, get the information for the default subdomains
+else
+  get_subdomain_info www $1
+  get_subdomain_info lb-01 $1
+  get_subdomain_info web-01 $1
+  get_subdomain_info web-02 $1
+fi
